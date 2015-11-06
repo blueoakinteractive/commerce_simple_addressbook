@@ -1,0 +1,5 @@
+name = Simple Address Book
+description = Provides a simple addressbook.
+core = 7.x
+
+dependencies[] = commerce_customer
