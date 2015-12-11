@@ -19,6 +19,7 @@ There are several inherent issues that commerce_addressbook has which this modul
 If you're already using commerce_addressbook, make sure that it is removed before
 enabling this module.
 
-Add to any Drupal Commerce site and enable!
+1) Add to any Drupal Commerce site and enable!
+2) Set "Edit own customer profiles of any type" and "View own customer profiles of any type" permissions for authenticated users so that customers can manage their address book profiles.
 
 Report issues to https://www.drupal.org/project/issues/commerce_simple_addressbook
