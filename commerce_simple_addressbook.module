@@ -259,6 +259,13 @@ function commerce_simple_addressbook_commerce_checkout_complete($order) {
         // Store the new profile id so that we can make sure the UID is set once
         // the order owner is assigned.
         $profile->data['commerce_simple_addressbook']['profile_id'] = $new_profile->profile_id;
+
+        // Set the entity context so that we'll be allowed to save the profile changes.
+        $profile->entity_context['entity_id'] = $order->order_id;
+        $profile->entity_context['entity_type'] = 'commerce_order';
+
+        // Make sure to save changes to the original profile.
+        commerce_customer_profile_save($profile);
       }
     } catch (Exception $ex) {
       watchdog('commerce_simple_addressbook', 'Unable to clone the saved address due because of @error', array('@error' => $ex->getMessage()));
